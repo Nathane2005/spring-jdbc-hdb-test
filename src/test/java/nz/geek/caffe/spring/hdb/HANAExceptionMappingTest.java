@@ -51,7 +51,7 @@ import org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator;
  * Reference: <a href=
  * "http://help.sap.com/saphelp_hanaplatform/helpdata/en/20/a78d3275191014b41bae7c4a46d835/content.htm"
  * >SQL Error Codes</a>
- * 
+ *
  * @author <a href='mailto:andrew.clemons@gmail.com'>Andrew Clemons</a>
  */
 public class HANAExceptionMappingTest {
