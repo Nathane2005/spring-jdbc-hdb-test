@@ -19,8 +19,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -77,8 +75,6 @@ public class HANAExceptionMappingTest {
 	datasource.destroy();
     }
 
-    private ExecutorService executor;
-
     private JdbcTemplate jdbcTemplate;
 
     private void dropTables() {
@@ -112,8 +108,6 @@ public class HANAExceptionMappingTest {
      */
     @Before
     public void setup() {
-	this.executor = Executors.newCachedThreadPool();
-
 	this.jdbcTemplate = new JdbcTemplate(datasource);
 
 	dropTables();
@@ -140,10 +134,7 @@ public class HANAExceptionMappingTest {
      */
     @After
     public void tearDown() {
-	this.executor.shutdownNow();
-
 	dropTables();
-
     }
 
     /**
